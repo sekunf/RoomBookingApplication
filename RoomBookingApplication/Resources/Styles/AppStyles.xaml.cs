@@ -1,4 +1,5 @@
-﻿namespace RoomBookingApplication.Resources.Styles;
+﻿using RoomBookingApplication;
+namespace RoomBookingApplication.Resources.Styles;
 
 public partial class AppStyles : ResourceDictionary
 {

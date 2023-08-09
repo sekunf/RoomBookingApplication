@@ -58,6 +58,7 @@
 	<ItemGroup>
 	  <None Remove="Pages\" />
 	  <None Remove="BusinessLogic\" />
+	  <None Remove="Resources\Images\user.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
@@ -74,6 +75,7 @@
 	    <DependentUpon>AppStyles.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </BundleResource>
+	  <BundleResource Include="Resources\Images\user.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Remove="Resources\Styles\AppStyles.xaml.cs" />

@@ -5,13 +5,12 @@
              Title="LoginPage">
 
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
 
         <Image
             x:Name="LoginImage"
+            Source="user.png"
+            WidthRequest="250"
             />
 
         <Label
@@ -32,7 +31,8 @@
             x:Name="LoginButton"
             Text="Login"
             Clicked="LoginButton_Clicked"
-            Style="{StaticResource }"/>
+            Style="{StaticResource ButtonLblStyle}"
+           />
 
 
 

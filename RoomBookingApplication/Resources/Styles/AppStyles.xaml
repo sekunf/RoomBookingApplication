@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RoomBookingApplication.Resources.Styles.AppStyles">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Style TargetType="Label" x:Key="HeadingStyle">
+
+    <!-- TODO: STYLES PLEASE I BEG OF YOU-->
+
+    <!--<Style TargetType="Label" x:Key="HeadingStyle">
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
@@ -11,14 +13,14 @@
         <Setter Property="FontSize" Value="Title"/>
      </Style>
 
-    <!-- Buttons Style -->
+     Buttons Style 
     <Style TargetType="Button" x:Key="ButtonLblStyle">
-            <Setter Property="TextColor" Value="Cyan"/>
-            <Setter Property="BackgroundColor" Value="DarkBlue"/>
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="TextColor" Value="Cyan"></Setter>
+            <Setter Property="BackgroundColor" Value="DarkBlue"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 
 
 
-    </Style>
+    </Style>-->
 
 </ResourceDictionary>
