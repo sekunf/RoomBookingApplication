@@ -6,6 +6,9 @@
 
     <VerticalStackLayout>
         
+        <Label
+            Text="Welcome to the Login Page!"
+            HorizontalTextAlignment="Center"/>
 
         <Image
             x:Name="LoginImage"
@@ -14,18 +17,22 @@
             />
 
         <Label
-            Text="Username"/>
+            Text="Username"
+            HorizontalTextAlignment="Center"/>
 
         <Entry
             x:Name="UsernameEntry"
-            Placeholder="Enter your username"/>
+            Placeholder="Enter your username"
+            HorizontalTextAlignment="Center"/>
 
          <Label
-            Text="Password"/>
+            Text="Password"
+            HorizontalTextAlignment="Center"/>
 
         <Entry
             x:Name="PasswordEntry"
-            Placeholder="Enter your password"/>
+            Placeholder="Enter your password"
+            HorizontalTextAlignment="Center"/>
 
         <Button
             x:Name="LoginButton"
