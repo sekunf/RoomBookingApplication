@@ -5,7 +5,7 @@
 
     <!-- TODO: STYLES PLEASE I BEG OF YOU-->
 
-    <!--<Style TargetType="Label" x:Key="HeadingStyle">
+    <Style TargetType="Label" x:Key="HeadingStyle">
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
@@ -13,7 +13,7 @@
         <Setter Property="FontSize" Value="Title"/>
      </Style>
 
-     Buttons Style 
+     <!--Buttons Style--> 
     <Style TargetType="Button" x:Key="ButtonLblStyle">
             <Setter Property="TextColor" Value="Cyan"></Setter>
             <Setter Property="BackgroundColor" Value="DarkBlue"></Setter>
@@ -21,6 +21,6 @@
 
 
 
-    </Style>-->
+    </Style>
 
 </ResourceDictionary>

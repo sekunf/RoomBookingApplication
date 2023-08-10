@@ -70,16 +70,9 @@
 	  <MauiXaml Remove="Resources\Styles\AppStyles.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Styles\AppStyles.xaml">
+	  <BundleResource Include="Resources\Styles\App_Styles.xaml">
 	    <SubType>Designer</SubType>
 	  </BundleResource>
-	  <BundleResource Include="Resources\Styles\AppStyles.xaml.cs">
-	    <DependentUpon>AppStyles.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </BundleResource>
 	  <BundleResource Include="Resources\Images\user.png" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="Resources\Styles\AppStyles.xaml.cs" />
 	</ItemGroup>
 </Project>
