@@ -60,6 +60,7 @@
 	  <None Remove="BusinessLogic\" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Pages\HelpPages\" />
+	  <None Remove="Resources\Images\info.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
@@ -73,13 +74,7 @@
 	  <BundleResource Include="Resources\Styles\AppStyles.xaml">
 	    <SubType>Designer</SubType>
 	  </BundleResource>
-	  <BundleResource Include="Resources\Styles\AppStyles.xaml.cs">
-	    <DependentUpon>AppStyles.xaml</DependentUpon>
-	    <SubType>Code</SubType>
-	  </BundleResource>
 	  <BundleResource Include="Resources\Images\user.png" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="Resources\Styles\AppStyles.xaml.cs" />
+	  <BundleResource Include="Resources\Images\info.png" />
 	</ItemGroup>
 </Project>

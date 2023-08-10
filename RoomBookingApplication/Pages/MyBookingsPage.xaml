@@ -63,5 +63,10 @@
         <Button
             Text="Edit Booking"
             />
+        <Button
+            x:Name="HelpPageButton"
+            Text="Go to help page"
+            Clicked="HelpPageButton_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

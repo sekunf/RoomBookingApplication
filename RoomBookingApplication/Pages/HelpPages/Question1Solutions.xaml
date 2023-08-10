@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomBookingApplication.Pages.HelpPages.Question1Solutions"
+             Title="Question1Solutions">
+
+    <VerticalStackLayout>
+        <Label 
+            Text="How do I make a reservation?"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Login in with you confidential details, after successfully logging in select which room you would like and add it"/>
+
+    </VerticalStackLayout>
+</ContentPage>

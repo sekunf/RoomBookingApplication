@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RoomBookingApplication.Pages.HelpPage"
              Title="HelpPage">
+
     <VerticalStackLayout>
         <Label 
             Text="Help Page"
@@ -11,33 +12,35 @@
 
         <Image
             x:Name="HelpImage"
-           />
+            Source="info.png"
+            WidthRequest="100"
+            VerticalOptions="Start"/>
 
         <Label
             Text="How do I make a reservation?"
             />
+
         <Button
             x:Name="Question1"
-            Text="View Solution"/>
+            Text="View Solution"
+            Clicked="Question1_Clicked"
+            />
 
 
         <Label
             Text="Can I modify or cancel my booking?"/>
         <Button
             x:Name="Question2"
-            Text="View Solution"/>
+            Text="View Solution"
+            Clicked="Question2_Clicked"/>
 
 
          <Label
             Text="What is your cancellation policy?"/>
         <Button
             x:Name="Question3"
-            Text="View Solution"/>
-
-
-
-
-
+            Text="View Solution"
+            Clicked="Question3_Clicked"/>
 
 
 

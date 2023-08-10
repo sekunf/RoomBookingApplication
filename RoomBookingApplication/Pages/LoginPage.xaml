@@ -34,8 +34,7 @@
             x:Name="LoginButton"
             Text="Login"
             Clicked="LoginButton_Clicked"
-            Style="{StaticResource ButtonLblStyle}"
-           />
+            Style="{StaticResource ButtonLblStyle}"/>
 
 
 
