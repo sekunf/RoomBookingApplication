@@ -4,6 +4,25 @@
              x:Class="RoomBookingApplication.Pages.MyBookingsPage"
              Title="MyBookings">
     <VerticalStackLayout>
+
+        <ScrollView>
+            <HorizontalStackLayout>
+                <Picker
+                    Title="Campus"
+                    x:Name="myPicker">
+                    <Picker.ItemsSource> 
+                        <x:Array Type="{x:Type x:String}"> 
+                            <x:String>Option 1</x:String> 
+                            <x:String>Option 2</x:String> 
+                            <x:String>Option 3</x:String> 
+                        </x:Array> 
+                    </Picker.ItemsSource> 
+                </Picker>          
+
+            </HorizontalStackLayout>
+
+        </ScrollView>
+
         <ListView
             x:Name="BookingsListView"
             ItemsSource="{Binding BookingManager.Bookings}">
@@ -56,6 +75,7 @@
             </ListView.ItemTemplate>
 
         </ListView>
+<<<<<<< Updated upstream
 
         <Button
             Text="New Booking"
@@ -70,6 +90,23 @@
             Text="Go to help page"
             Style="{StaticResource ButtonLblStyle}"
             />
+=======
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15"> 
+            <Button
+                Text="New Booking"
+                
+                />
+            <Button
+                Text="Edit Booking"
+                
+                />
+            <Button
+                x:Name="HelpPageButton"
+                Text="Go to help page"
+                
+                />
+        </HorizontalStackLayout>
+>>>>>>> Stashed changes
 
     </VerticalStackLayout>
 </ContentPage>
