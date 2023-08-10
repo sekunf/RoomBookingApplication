@@ -1,11 +1,8 @@
 ﻿using System;
 namespace RoomBookingApplication.BusinessLogic
 {
-	public class Rooms
-	{
-
+	
         
-
         public enum Campus
         {
             DAV,
@@ -13,7 +10,7 @@ namespace RoomBookingApplication.BusinessLogic
             TRA
         }
 
-        public enum Type
+        public enum RoomType
         {
             GroupStudy,
             IndividualStudy,
@@ -21,7 +18,7 @@ namespace RoomBookingApplication.BusinessLogic
             
         }
             
-        public class Room
+        public class Rooms
         {
             private string _roomName;
             private int _roomNumber;
@@ -65,12 +62,11 @@ namespace RoomBookingApplication.BusinessLogic
                 set;
             }
 
-            public Type RoomType { get; set; }
+            public RoomType RoomType { get; set; }
 
 
-            public Room(int seatingCapacity, Campus campus, Type roomType)
+            public Rooms(int seatingCapacity, Campus campus, RoomType roomType)
             {
-                
                 SeatingCapacity = seatingCapacity;
                 Campus = campus;
                 RoomType = roomType;
@@ -78,7 +74,7 @@ namespace RoomBookingApplication.BusinessLogic
             }
 
         }
-    }
+    
 
 
 }
