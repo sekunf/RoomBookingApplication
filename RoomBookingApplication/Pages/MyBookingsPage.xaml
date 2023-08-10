@@ -75,22 +75,9 @@
             </ListView.ItemTemplate>
 
         </ListView>
-<<<<<<< Updated upstream
 
-        <Button
-            Text="New Booking"
-            Style="{StaticResource ButtonLblStyle}"
-            />
-        <Button
-            Text="Edit Booking"
-            Style="{StaticResource ButtonLblStyle}"
-            />
-        <Button
-            x:Name="HelpPageButton"
-            Text="Go to help page"
-            Style="{StaticResource ButtonLblStyle}"
-            />
-=======
+
+
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="15"> 
             <Button
                 Text="New Booking"
@@ -106,7 +93,7 @@
                 
                 />
         </HorizontalStackLayout>
->>>>>>> Stashed changes
+
 
     </VerticalStackLayout>
 </ContentPage>
