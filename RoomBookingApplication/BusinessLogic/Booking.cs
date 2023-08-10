@@ -3,8 +3,8 @@ namespace RoomBookingApplication.BusinessLogic
 {
     public class Booking
     {
-        public class ReservationRequest
-        {
+        
+        
             public int BookingId { get; set; }
             public DateTime BookingDate { get; set; }
             public TimeSpan StartTime { get; set; }
@@ -18,7 +18,7 @@ namespace RoomBookingApplication.BusinessLogic
             private static int _nextRequestID = 1;
 
 
-            public ReservationRequest()
+            public Booking()
             {
                 BookingId = _nextRequestID++;
 
@@ -46,7 +46,7 @@ namespace RoomBookingApplication.BusinessLogic
                 return false;
             }
 
-        }
+        
 
 
     }
