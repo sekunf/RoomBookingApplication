@@ -5,39 +5,50 @@
              Title="LoginPage">
 
     <VerticalStackLayout>
+        <StackLayout Padding="20">
+
+
         
         <Label
+            Padding="0,30,0,0"
             Text="Welcome to the Login Page!"
-            HorizontalTextAlignment="Center"/>
+            HorizontalTextAlignment="Center"
+            Style="{StaticResource HeadingStyle}"/>
 
         <Image
             x:Name="LoginImage"
             Source="user.png"
-            WidthRequest="250"
+            WidthRequest="270"
             />
 
         <Label
-            Text="Username"/>
+            Text="Username"
+            Padding="5"/>
 
         <Entry
             x:Name="UsernameEntry"
-            Placeholder="Enter your username"/>
+            Placeholder="Enter your username"
+            />
 
          <Label
-            Text="Password"/>
+            Text="Password"
+            Padding="5"/>
 
         <Entry
             x:Name="PasswordEntry"
-            Placeholder="Enter your password"/>
+            Placeholder="Enter your password"
+
+            />
 
         <Button
+            
             x:Name="LoginButton"
             Text="Login"
             Clicked="LoginButton_Clicked"
-            Style="{StaticResource ButtonLblStyle}"/>
+            Style="{StaticResource ButtonLblStyle}"
+            WidthRequest="80"/>
 
-
-
+            </StackLayout>
 
     </VerticalStackLayout>
 </ContentPage>

@@ -9,13 +9,13 @@
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="VerticalOptions" Value="Center"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
-        <Setter Property="TextColor" Value="Blue"></Setter>
-        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="TextColor" Value="White"></Setter>
+        <Setter Property="FontSize" Value="Large"/>
      </Style>
 
      <!--Buttons Style--> 
     <Style TargetType="Button" x:Key="ButtonLblStyle">
-            <Setter Property="TextColor" Value="Cyan"></Setter>
+            <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="BackgroundColor" Value="DarkBlue"></Setter>
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 
