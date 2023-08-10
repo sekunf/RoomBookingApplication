@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
 
-    <!-- TODO: STYLES PLEASE I BEG OF YOU-->
+     <!--TODO: STYLES PLEASE I BEG OF YOU-->
 
     <Style TargetType="Label" x:Key="HeadingStyle">
         <Setter Property="FontAttributes" Value="Bold"/>
