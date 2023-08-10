@@ -11,7 +11,7 @@
 
         <Image
             x:Name="HelpImage"
-            Source=""/>
+           />
 
         <Label
             Text="How do I make a reservation?"
