@@ -24,7 +24,8 @@ namespace RoomBookingApplication.BusinessLogic
         public class Room
         {
             private string _roomName;
-            private int _roomNumber = 101;
+            private int _roomNumber;
+            private static int _nextRoomNumber = 101;
 
             public string RoomName
             {
@@ -34,9 +35,10 @@ namespace RoomBookingApplication.BusinessLogic
                 }
                 set
                 {
-                    _roomName = $"{Campus} {RoomNumber}";
+                    _roomName = $"{Campus} {_roomNumber}";
                 }
             }
+
 
             public int RoomNumber
             {
@@ -47,9 +49,8 @@ namespace RoomBookingApplication.BusinessLogic
 
                 set
                 {
-                    _roomNumber++;
+                    _roomNumber = value;
                 }
-
             }
 
             public int SeatingCapacity
@@ -67,6 +68,14 @@ namespace RoomBookingApplication.BusinessLogic
             public Type RoomType { get; set; }
 
 
+            public Room(int seatingCapacity, Campus campus, Type roomType)
+            {
+                
+                SeatingCapacity = seatingCapacity;
+                Campus = campus;
+                RoomType = roomType;
+                RoomNumber = _nextRoomNumber++;
+            }
 
         }
     }
