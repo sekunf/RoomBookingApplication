@@ -59,13 +59,16 @@
 
         <Button
             Text="New Booking"
+            Style="{StaticResource ButtonLblStyle}"
             />
         <Button
             Text="Edit Booking"
+            Style="{StaticResource ButtonLblStyle}"
             />
         <Button
             x:Name="HelpPageButton"
             Text="Go to help page"
+            Style="{StaticResource ButtonLblStyle}"
             />
 
     </VerticalStackLayout>
