@@ -60,7 +60,6 @@
 	  <None Remove="BusinessLogic\" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Pages\HelpPages\" />
-	  <None Remove="Resources\Images\info.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
@@ -71,10 +70,9 @@
 	  <MauiXaml Remove="Resources\Styles\AppStyles.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Styles\AppStyles.xaml">
+	  <BundleResource Include="Resources\Styles\App_Styles.xaml">
 	    <SubType>Designer</SubType>
 	  </BundleResource>
 	  <BundleResource Include="Resources\Images\user.png" />
-	  <BundleResource Include="Resources\Images\info.png" />
 	</ItemGroup>
 </Project>
