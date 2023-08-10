@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomBookingApplication.Pages.HelpPage"
+             Title="HelpPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Help Page"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image
+            x:Name="HelpImage"
+            Source=""/>
+
+        <Label
+            Text="How do I make a reservation?"
+            />
+        <Button
+            x:Name="Question1"
+            Text="View Solution"/>
+
+
+        <Label
+            Text="Can I modify or cancel my booking?"/>
+        <Button
+            x:Name="Question2"
+            Text="View Solution"/>
+
+
+         <Label
+            Text="What is your cancellation policy?"/>
+        <Button
+            x:Name="Question3"
+            Text="View Solution"/>
+
+
+
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

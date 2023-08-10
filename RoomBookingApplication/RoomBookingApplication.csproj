@@ -59,10 +59,12 @@
 	  <None Remove="Pages\" />
 	  <None Remove="BusinessLogic\" />
 	  <None Remove="Resources\Images\user.png" />
+	  <None Remove="Pages\HelpPages\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
 	  <Folder Include="BusinessLogic\" />
+	  <Folder Include="Pages\HelpPages\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Styles\AppStyles.xaml" />

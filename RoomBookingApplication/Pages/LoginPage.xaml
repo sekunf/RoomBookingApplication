@@ -17,22 +17,18 @@
             />
 
         <Label
-            Text="Username"
-            HorizontalTextAlignment="Center"/>
+            Text="Username"/>
 
         <Entry
             x:Name="UsernameEntry"
-            Placeholder="Enter your username"
-            HorizontalTextAlignment="Center"/>
+            Placeholder="Enter your username"/>
 
          <Label
-            Text="Password"
-            HorizontalTextAlignment="Center"/>
+            Text="Password"/>
 
         <Entry
             x:Name="PasswordEntry"
-            Placeholder="Enter your password"
-            HorizontalTextAlignment="Center"/>
+            Placeholder="Enter your password"/>
 
         <Button
             x:Name="LoginButton"
