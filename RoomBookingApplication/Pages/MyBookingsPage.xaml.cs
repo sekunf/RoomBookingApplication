@@ -1,4 +1,4 @@
-﻿using static Android.Provider.ContactsContract.CommonDataKinds;
+﻿//using static Android.Provider.ContactsContract.CommonDataKinds;
 using RoomBookingApplication.BusinessLogic;
 namespace RoomBookingApplication.Pages;
 

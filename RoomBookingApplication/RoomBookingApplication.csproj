@@ -74,5 +74,6 @@
 	    <SubType>Designer</SubType>
 	  </BundleResource>
 	  <BundleResource Include="Resources\Images\user.png" />
+	  <BundleResource Include="Resources\Images\info.png" />
 	</ItemGroup>
 </Project>
