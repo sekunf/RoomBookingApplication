@@ -5,10 +5,13 @@
              Title="Edit Booking">
 
     <VerticalStackLayout Padding="20">
-        
+        <Label
+            x:Name="RoomNameLabel"
+            Text=""/>
         
         <Label Text="Booking Date" />
-        <DatePicker x:Name="BookingDatePicker" />
+        <DatePicker x:Name="BookingDatePicker"
+                    />
 
        
         <Label Text="Start Time" Margin="0,10,0,0" />
@@ -24,10 +27,17 @@
                Placeholder="Enter number of participants" 
                Keyboard="Numeric"/>
 
+
+        <Button Text="Delete Booking" 
+        Margin="0,20,0,0"
+        BackgroundColor="Red" 
+        TextColor="White"
+        Clicked="DeleteBookingButton_Clicked"/>
+
         
         
 
-        
+       
         <Button Text="Update Booking" 
                 Margin="0,20,0,0"
                 Clicked="UpdateBookingButton_Clicked"/>

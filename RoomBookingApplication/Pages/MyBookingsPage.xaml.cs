@@ -16,16 +16,16 @@ public partial class MyBookingsPage : ContentPage
 
     public BookingManager BookingManager{ get { return _BookingManager; } }
 
-    Booking _selectedRoom;
-    public Booking SelectedRoom
+    Booking _selectedBooking;
+    public Booking SelectedBooking
     {
-        get { return _selectedRoom; }
+        get { return _selectedBooking; }
         set
         {
-            if (_selectedRoom == value)
+            if (_selectedBooking == value)
                 return;
 
-            _selectedRoom = value;
+            _selectedBooking = value;
             OnPropertyChanged();
         }
     }
@@ -64,7 +64,7 @@ public partial class MyBookingsPage : ContentPage
 
     void EditBookingBtnClicked(System.Object sender, System.EventArgs e)
     {
-        EditBookingPage editBookingPage = new EditBookingPage(SelectedRoom);
+        EditBookingPage editBookingPage = new EditBookingPage(SelectedBooking,BookingManager);
         Navigation.PushAsync(editBookingPage);
     }
 }

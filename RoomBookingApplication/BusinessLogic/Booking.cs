@@ -24,26 +24,22 @@ namespace RoomBookingApplication.BusinessLogic
 
             }
 
-
+        // function if date is greater than 3
             public bool IsDurationValid()
             {
-                if(StartTime < EndTime)
-                {
-                    return true;
-                }
-                return false;
-            }
+            return StartTime < EndTime;
+        }
 
             public bool IsDurationTooLong()
             {
                 TimeSpan duration = EndTime - StartTime;
 
-                if (duration.TotalHours > 3)
+                if (duration.TotalHours <= 3)
                 {
-                    return true;
+                    return false;
                 }
 
-                return false;
+                return true;
             }
 
         

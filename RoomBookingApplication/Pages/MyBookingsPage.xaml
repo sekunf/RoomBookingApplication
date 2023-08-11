@@ -46,7 +46,8 @@
 
         <ListView
     x:Name="BookingsListView"
-    ItemsSource="{Binding BookingManager.Bookings}">
+    ItemsSource="{Binding BookingManager.Bookings}"
+    SelectedItem="{Binding SelectedBooking, Mode=TwoWay}">
     
     <ListView.ItemTemplate>
         <DataTemplate>
@@ -117,6 +118,7 @@
         <Button
             Text="Edit Booking"
             Style="{StaticResource ButtonLblStyle}"
+            Clicked="EditBookingBtnClicked"
             />
         <Button
             x:Name="HelpPageButton"

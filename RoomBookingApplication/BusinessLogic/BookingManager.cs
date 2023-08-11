@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 //using static Android.Provider.DocumentsContract;
+//using static Android.Provider.DocumentsContract;
 using static RoomBookingApplication.BusinessLogic.Rooms;
 
 namespace RoomBookingApplication.BusinessLogic
@@ -48,15 +49,31 @@ namespace RoomBookingApplication.BusinessLogic
             Rooms room = FindRoomByName(roomName);
             booking.AssociatedRoom = room;
 
-            // Check if the booking's duration is valid and not too long, and if the particapnts dont exceed capacity
-            if (booking.IsDurationValid() && !booking.IsDurationTooLong() && participantCount<=room.SeatingCapacity)
+            if (BookingIsValid(booking, participantCount, room))
             {
                 _bookings.Add(booking);
             }
-            else
+           
+
+
+        }
+
+        public bool BookingIsValid(Booking booking, int participantCount, Rooms room)
+        {
+            if (!booking.IsDurationValid())
             {
-                throw new Exception("Booking is invalid.");
+                throw new Exception("Booking duration is invalid.");
             }
+            else if (booking.IsDurationTooLong())
+            {
+                throw new Exception("Booking duration is too long.");
+            }
+            else if (participantCount > room.SeatingCapacity)
+            {
+                throw new Exception("Participant count exceeds room seating capacity.");
+            }
+
+            return true;
         }
 
 
