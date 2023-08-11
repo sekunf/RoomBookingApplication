@@ -45,4 +45,18 @@
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
     </Style>
 
+    <Style TargetType="Button" x:Key="UnselectedButton">
+            <Setter Property="TextColor" Value="Grey"></Setter>
+            <Setter Property="BackgroundColor" Value="DarkGrey"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+    </Style>
+
+     <Style TargetType="Button" x:Key="SelectedButton">
+            <Setter Property="TextColor" Value="Grey"></Setter>
+            <Setter Property="BackgroundColor" Value="DarkGrey"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+    </Style>
+
+
+
 </ResourceDictionary>

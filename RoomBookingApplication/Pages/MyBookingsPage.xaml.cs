@@ -59,6 +59,8 @@ public partial class MyBookingsPage : ContentPage
 
     void NewBookingBtnClicked(System.Object sender, System.EventArgs e)
     {
+        AddBooking addBooking = new AddBooking();
+        Navigation.PushAsync(addBooking);
 
     }
 
@@ -66,6 +68,10 @@ public partial class MyBookingsPage : ContentPage
     {
         EditBookingPage editBookingPage = new EditBookingPage(SelectedBooking,BookingManager);
         Navigation.PushAsync(editBookingPage);
+    }
+
+    void Button_Clicked(System.Object sender, System.EventArgs e)
+    {
     }
 }
 
