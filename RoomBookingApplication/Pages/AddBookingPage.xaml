@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomBookingApplication.Pages.AddBookingPage"
+             Title="AddBooking">
+    <VerticalStackLayout>
+        <Label
+            x:Name="RoomNameLabel"
+            Text=""/>
+        
+        <Label Text="Booking Date" />
+        <DatePicker x:Name="BookingDatePicker"
+                    />
+
+       
+        <Label Text="Start Time" Margin="0,10,0,0" />
+        <TimePicker x:Name="StartTimePicker" />
+
+       
+        <Label Text="End Time" Margin="0,10,0,0" />
+        <TimePicker x:Name="EndTimePicker" />
+
+        
+        <Label Text="Number of Participants" Margin="0,10,0,0" />
+        <Entry x:Name="ParticipantCountEntry" 
+               Placeholder="Enter number of participants" 
+               Keyboard="Numeric"/>
+
+         <Button Text="Add Booking" 
+                Margin="0,20,0,0"
+                Clicked="AddBookingButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

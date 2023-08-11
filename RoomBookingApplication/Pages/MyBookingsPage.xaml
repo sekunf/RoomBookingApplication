@@ -6,44 +6,6 @@
              Title="MyBookings">
     <VerticalStackLayout>
         
-            <HorizontalStackLayout Spacing="30" >
-                
-                <Label
-                    Text="Campus"/>
-                <Button
-                    Text="DAV"/>
-
-                <Button
-                    Text="HMC"/>
-
-                <Button
-                    Text="TRA"
-                />
-                  
-
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="30" >
-            <Label
-                Text="Room Type"/>
-            <Button
-            Text="Group Study"
-            />
-
-            <Button
-            Text="Individual Study"
-            />
-
-            <Button
-            Text="Silent Study"
-            />
-                  
-
-            </HorizontalStackLayout>
-
-
-        
-
         <ListView
     x:Name="BookingsListView"
     ItemsSource="{Binding BookingManager.Bookings}"
@@ -113,6 +75,7 @@
         <Button
             Text="New Booking"
             Style="{StaticResource ButtonLblStyle}"
+            Clicked="NewBookingBtnClicked"
 
             />
         <Button
