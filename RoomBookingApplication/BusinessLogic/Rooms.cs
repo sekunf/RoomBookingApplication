@@ -1,82 +1,62 @@
 ﻿using System;
+
 namespace RoomBookingApplication.BusinessLogic
 {
-	
-        
-        public enum Campus
+    public enum Campus
+    {
+        DAV,
+        HMC,
+        TRA
+    }
+
+    public enum RoomType
+    {
+        GroupStudy,
+        IndividualStudy,
+        SilentStudy,
+    }
+
+    public class Rooms
+    {
+        private string _roomName;
+        private int _roomNumber;
+        private static int _nextRoomNumber = 101;
+
+        public string RoomName
         {
-            DAV,
-            HMC,
-            TRA
+            get
+            {
+                return _roomName;
+            }
+            set
+            {
+                _roomName = value;
+            }
         }
 
-        public enum RoomType
+        public int RoomNumber
         {
-            GroupStudy,
-            IndividualStudy,
-            SilentSTudy,
-            
+            get
+            {
+                return _roomNumber;
+            }
+            set
+            {
+                _roomNumber = value;
+            }
         }
-            
-        public class Rooms
+
+        public int SeatingCapacity { get; set; }
+        public Campus Campus { get; set; }
+        public RoomType RoomType { get; set; }
+
+        public Rooms(int seatingCapacity, Campus campus, RoomType roomType)
         {
-            private string _roomName;
-            private int _roomNumber;
-            private static int _nextRoomNumber = 101;
-
-            public string RoomName
-            {
-                get
-                {
-                    return _roomName;
-                }
-                set
-                {
-                    _roomName = $"{Campus} {_roomNumber}";
-                }
-            }
-
-
-            public int RoomNumber
-            {
-                get
-                {
-                    return _roomNumber;
-                }
-
-                set
-                {
-                    _roomNumber = value;
-                }
-            }
-
-            public int SeatingCapacity
-            {
-                get;
-                set;
-            }
-
-            public Campus Campus
-            {
-                get;
-                set;
-            }
-
-            public RoomType RoomType { get; set; }
-
-
-            public Rooms(int seatingCapacity, Campus campus, RoomType roomType)
-            {
-                SeatingCapacity = seatingCapacity;
-                Campus = campus;
-                RoomType = roomType;
-                RoomNumber = _nextRoomNumber++;
-            }
-
+            SeatingCapacity = seatingCapacity;
+            Campus = campus;
+            RoomType = roomType;
+            RoomNumber = _nextRoomNumber++;
+            RoomName = $"{Campus} {RoomNumber}"; // Construct the room name
         }
-    
-
-
+    }
 }
-
-

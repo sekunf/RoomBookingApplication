@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+//using static Android.Provider.DocumentsContract;
 using static RoomBookingApplication.BusinessLogic.Rooms;
 
 namespace RoomBookingApplication.BusinessLogic
@@ -10,11 +11,22 @@ namespace RoomBookingApplication.BusinessLogic
         private List<Rooms> _roomsList;
         private List<Booking> _bookings;
 
+        public List<Rooms> RoomsList
+        {
+            get { return _roomsList; }
+        }
+
+        public List<Booking> Bookings
+        {
+            get { return _bookings; }
+        }
+
         public BookingManager()
         {
             _roomsList = new List<Rooms>();
             _bookings = new List<Booking>();
         }
+
 
         public void AddRoom(int seatingCapacity, Campus campus, RoomType roomType)
         {
@@ -22,20 +34,45 @@ namespace RoomBookingApplication.BusinessLogic
             _roomsList.Add(newRoom);
         }
 
-        public void AddBooking(Booking booking)
+        public void AddBooking(string roomName, DateTime bookingDate, TimeSpan startTime, TimeSpan endTime, int participantCount)
         {
-            if (booking == null)
-                throw new ArgumentNullException(nameof(booking));
+            Booking booking = new Booking();
 
-            if (booking.IsDurationValid() && !booking.IsDurationTooLong())
+            // Set properties for the newly created booking
+            booking.BookingDate = bookingDate;
+            booking.StartTime = startTime;
+            booking.EndTime = endTime;
+            booking.ParticipantCount = participantCount;
+
+            
+            Rooms room = FindRoomByName(roomName);
+            booking.AssociatedRoom = room;
+
+            // Check if the booking's duration is valid and not too long, and if the particapnts dont exceed capacity
+            if (booking.IsDurationValid() && !booking.IsDurationTooLong() && participantCount<=room.SeatingCapacity)
             {
                 _bookings.Add(booking);
             }
             else
             {
-                throw new InvalidOperationException("Booking duration is invalid.");
+                throw new Exception("Booking is invalid.");
             }
         }
+
+
+        public Rooms FindRoomByName(string roomName)
+        {
+            foreach (Rooms room in _roomsList)
+            {
+                if (room.RoomName == roomName)
+                {
+                    return room;
+                }
+            }
+
+            return null; // Room with the given name was not found
+        }
+
 
         public List<Booking> GetBookingsForRoom(Rooms room)
         {

@@ -5,25 +5,51 @@ namespace RoomBookingApplication.Pages;
 public partial class MyBookingsPage : ContentPage
 {
 	
+
         BookingManager _BookingManager = new BookingManager();
 
+		
 
-        public BookingManager BookingManager
+   
+
+
+
+    public BookingManager BookingManager{ get { return _BookingManager; } }
+
+    Booking _selectedRoom;
+    public Booking SelectedRoom
+    {
+        get { return _selectedRoom; }
+        set
         {
-            get
-            {
-                return _BookingManager;
-            }
+            if (_selectedRoom == value)
+                return;
 
+            _selectedRoom = value;
+            OnPropertyChanged();
         }
+    }
 
-        public MyBookingsPage()
-        {
+
+
+    public MyBookingsPage()
+    {
+
         InitializeComponent();
             
+        BookingManager.AddRoom(4, Campus.DAV, RoomType.GroupStudy);
+        BookingManager.AddRoom(4, Campus.DAV, RoomType.GroupStudy);
+        BookingManager.AddRoom(4, Campus.HMC, RoomType.GroupStudy);
 
-            BindingContext = this;
-        }
+        DateTime dummyBookingDate = new DateTime(2023, 8, 15); // Dummy booking date
+        TimeSpan startTime = new TimeSpan(10, 0, 0); // Start time
+        TimeSpan endTime = new TimeSpan(13, 0, 0); // End time
+        int participantCount = 4; // Participant count
+
+        BookingManager.AddBooking("DAV 102", dummyBookingDate, startTime, endTime, participantCount);
+
+        BindingContext = this;
+    }
 
     void HelpPageButton_Clicked(System.Object sender, System.EventArgs e)
     {
@@ -31,5 +57,15 @@ public partial class MyBookingsPage : ContentPage
         Navigation.PushAsync(helpPage);
     }
 
+    void NewBookingBtnClicked(System.Object sender, System.EventArgs e)
+    {
+
+    }
+
+    void EditBookingBtnClicked(System.Object sender, System.EventArgs e)
+    {
+        EditBookingPage editBookingPage = new EditBookingPage(SelectedRoom);
+        Navigation.PushAsync(editBookingPage);
+    }
 }
 
