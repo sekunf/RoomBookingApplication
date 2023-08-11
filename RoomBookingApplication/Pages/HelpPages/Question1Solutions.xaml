@@ -8,10 +8,27 @@
         <Label 
             Text="How do I make a reservation?"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            Style="{StaticResource QuestionStyle}"/>
 
-        <Label
-            Text="Login in with you confidential details, after successfully logging in select which room you would like and add it"/>
+        <StackLayout Margin="30">
+    <Label Text="Making a room reservation in the Room Booking Application involves a few simple steps. Here's a step-by-step guide on how to do it:" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="1. Open the Room Booking Application on your device" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="2. Login with your details" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="3. You will then be guided to the View Available Pages which will provide you with the list of the available room up for reservation" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="4. Browse through and choose which room fits your needs" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="5. Select the 'Add Reservation' button after entering all the details required" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="6. Submit the request and you're ready to go!" Style="{StaticResource AnswerStyle}"/>
+        </StackLayout>
+
+        <Button
+            x:Name="BackToHelp"
+            Text="Back to Help"
+            Clicked="BackToHelp_Clicked"
+            Style="{StaticResource ButtonLblStyle}"/>
+
 
     </VerticalStackLayout>
 </ContentPage>
+
+

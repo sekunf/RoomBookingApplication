@@ -81,24 +81,6 @@
 
 
 
-
-        <HorizontalStackLayout HorizontalOptions="Center" Spacing="15"> 
-            <Button
-                Text="New Booking"
-                
-                />
-            <Button
-                Text="Edit Booking"
-                
-                />
-            <Button
-                x:Name="HelpPageButton"
-                Text="Go to help page"
-                
-                />
-        </HorizontalStackLayout>
-
-
         <Button
             Text="New Booking"
             Style="{StaticResource ButtonLblStyle}"

@@ -5,8 +5,22 @@
              Title="Question3Solutions">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="What is your cancellation policy?"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            Style="{StaticResource QuestionStyle}"/>
+
+        <StackLayout Margin="30">
+    <Label Text="We understand that plans can change, and we strive to be as flexible and convenient as possible!  : " Style="{StaticResource AnswerStyle}"/>
+    <Label Text="1. Bookings can be canceled up to 24 hours before the scheduled start time. " Style="{StaticResource AnswerStyle}"/>
+    <Label Text="2. You also modify your booking details to a more convientent time!." Style="{StaticResource AnswerStyle}"/>
+
+        </StackLayout>
+
+        <Button
+            x:Name="BackToHelp"
+            Text="Back to Help"
+            Clicked="BackToHelp_Clicked"
+            Style="{StaticResource ButtonLblStyle}"/> 
     </VerticalStackLayout>
 </ContentPage>

@@ -5,8 +5,26 @@
              Title="Question2Solutions">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Can I modify my booking?"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            Style="{StaticResource QuestionStyle}"/>
+
+        <StackLayout Margin="30">
+    <Label Text="Yes you absolutely can! The Room Booking Application offers the flexibility to modify bookings if your plans change. Here's how you do it! : " Style="{StaticResource AnswerStyle}"/>
+    <Label Text="1. Locate your booking on booking page" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="2. Once you've found it, select the 'Modify' button associated with it." Style="{StaticResource AnswerStyle}"/>
+    <Label Text="3. You'll be presented with a form allowing you to adjust your booking details." Style="{StaticResource AnswerStyle}"/>
+    <Label Text="4. Modify the booking date, start time, end time or participant count as needed" Style="{StaticResource AnswerStyle}"/>
+    <Label Text="5. After making the necessary modifications, confirm your changes." Style="{StaticResource AnswerStyle}"/>
+    <Label Text="6. All your modifications will updated accordingly! " Style="{StaticResource AnswerStyle}"/>
+        </StackLayout>
+
+        <Button
+            x:Name="BackToHelp"
+            Text="Back to Help"
+            Clicked="BackToHelp_Clicked"
+            Style="{StaticResource ButtonLblStyle}"/> 
+
     </VerticalStackLayout>
 </ContentPage>

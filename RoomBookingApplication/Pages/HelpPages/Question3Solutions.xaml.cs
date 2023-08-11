@@ -6,4 +6,9 @@ public partial class Question3Solutions : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void BackToHelp_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

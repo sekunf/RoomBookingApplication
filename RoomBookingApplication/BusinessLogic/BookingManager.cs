@@ -71,5 +71,21 @@ namespace RoomBookingApplication.BusinessLogic
             existingBooking.ParticipantCount = updatedBooking.ParticipantCount;
             existingBooking.AssociatedRoom = updatedBooking.AssociatedRoom;
         }
+
+        public void DeleteBooking(Booking deleteBooking)
+        {
+            if (deleteBooking == null)
+                throw new ArgumentException("Booking doesn't exist");
+            _bookings.Remove(deleteBooking);
+        }
+
+        public void DeleteRooms(Rooms rooms)
+        {
+            if (rooms == null)
+                throw new ArgumentException("Booking doesn't exist");
+            _roomsList.Remove(rooms);
+        }
+
+
     }
 }

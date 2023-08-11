@@ -5,8 +5,6 @@ namespace RoomBookingApplication.Pages;
 public partial class MyBookingsPage : ContentPage
 {
 	
-		
-
         BookingManager _BookingManager = new BookingManager();
 
 
@@ -18,8 +16,6 @@ public partial class MyBookingsPage : ContentPage
             }
 
         }
-
-
 
         public MyBookingsPage()
         {

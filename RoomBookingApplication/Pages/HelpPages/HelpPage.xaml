@@ -5,16 +5,12 @@
              Title="HelpPage">
 
     <VerticalStackLayout>
-        <Label 
-            Text="Help Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-
+     
         <Image
             x:Name="HelpImage"
             Source="info.png"
-            WidthRequest="100"
-            VerticalOptions="Start"/>
+            WidthRequest="90"
+            />
 
         <Label
             Text="How do I make a reservation?"
