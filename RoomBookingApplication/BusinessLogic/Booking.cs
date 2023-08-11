@@ -24,7 +24,9 @@ namespace RoomBookingApplication.BusinessLogic
 
             }
 
-        // function if date is greater than 3
+        
+
+
             public bool IsDurationValid()
             {
             return StartTime < EndTime;
@@ -41,8 +43,16 @@ namespace RoomBookingApplication.BusinessLogic
 
                 return true;
             }
+        public bool IsBookingDateTooFar()
+        {
+            TimeSpan difference = BookingDate - DateTime.Now;
 
-        
+            
+            return difference.TotalDays > 3;
+        }
+
+
+
 
 
     }

@@ -29,7 +29,7 @@ namespace RoomBookingApplication.Pages
 
 
 
-        private void UpdateBookingButton_Clicked(object sender, EventArgs e)
+        private async void UpdateBookingButton_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -41,34 +41,34 @@ namespace RoomBookingApplication.Pages
                     SelectedBooking.StartTime = StartTimePicker.Time;
                     SelectedBooking.EndTime = EndTimePicker.Time;
                     SelectedBooking.ParticipantCount = newParticipantCount;
-                    DisplayAlert("Sucessful", $"Booking Updated Sucessfully", "OK");
-                    Navigation.PopAsync();
+                    await DisplayAlert("Sucessful", $"Booking Updated Sucessfully", "OK");
+                    await Navigation.PopAsync();
                 }
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+                await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
         }
 
-        void DeleteBookingButton_Clicked(System.Object sender, System.EventArgs e)
+
+        private async void DeleteBookingButton_Clicked(System.Object sender, System.EventArgs e)
         {
             try
             {
-                var userAcceptance = DisplayAlert("Confirmation", "Are you sure you want to delete this booking?", "Yes", "No").Result;
+                bool userAcceptance = await DisplayAlert("Confirmation", "Are you sure you want to delete this booking?", "Yes", "No");
 
                 if (userAcceptance)
                 {
                     BookingManager.DeleteBooking(SelectedBooking);
-                    DisplayAlert("Success", "Booking deleted successfully.", "OK");
-                    Navigation.PopAsync(); 
+                    await DisplayAlert("Success", "Booking deleted successfully.", "OK");
+                    await Navigation.PopAsync();
                 }
             }
             catch (Exception ex)
             {
-                DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+                await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
-
         }
 
     }

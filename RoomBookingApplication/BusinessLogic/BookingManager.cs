@@ -72,11 +72,15 @@ namespace RoomBookingApplication.BusinessLogic
             {
                 throw new Exception("Participant count exceeds room seating capacity.");
             }
+            else if (booking.IsBookingDateTooFar())
+            {
+                throw new Exception("The booking is more than 3days from today.");
+            }
 
             return true;
         }
 
-
+        // run it in the here so it checks for the 3 days greater or not
         public Rooms FindRoomByName(string roomName)
         {
             foreach (Rooms room in _roomsList)

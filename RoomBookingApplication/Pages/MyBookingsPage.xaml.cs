@@ -41,7 +41,7 @@ public partial class MyBookingsPage : ContentPage
         BookingManager.AddRoom(4, Campus.DAV, RoomType.GroupStudy);
         BookingManager.AddRoom(4, Campus.HMC, RoomType.GroupStudy);
 
-        DateTime dummyBookingDate = new DateTime(2023, 8, 15); // Dummy booking date
+        DateTime dummyBookingDate = new DateTime(2023, 8, 12); // Dummy booking date
         TimeSpan startTime = new TimeSpan(10, 0, 0); // Start time
         TimeSpan endTime = new TimeSpan(13, 0, 0); // End time
         int participantCount = 4; // Participant count
