@@ -7,7 +7,7 @@ namespace RoomBookingApplication.BusinessLogic
 {
     public class BookingManager
     {
-        private List<Rooms> _roomsList; // Changed type to List<Room>
+        private List<Rooms> _roomsList;
         private List<Booking> _bookings;
 
         public BookingManager()
@@ -18,9 +18,8 @@ namespace RoomBookingApplication.BusinessLogic
 
         public void AddRoom(int seatingCapacity, Campus campus, RoomType roomType)
         {
-            Rooms newRoom = new (seatingCapacity, campus, roomType);
-
-            _roomsList.Add(newRoom);  // Added this line to actually add the room
+            Rooms newRoom = new Rooms(seatingCapacity, campus, roomType);
+            _roomsList.Add(newRoom);
         }
 
         public void AddBooking(Booking booking)
@@ -46,6 +45,31 @@ namespace RoomBookingApplication.BusinessLogic
             return _bookings.Where(b => b.AssociatedRoom != null && b.AssociatedRoom.RoomNumber == room.RoomNumber).ToList();
         }
 
-        // Optionally, you can add other utility methods as you mentioned.
+        // New method to retrieve a list of all rooms
+        public List<Rooms> GetAllRooms()
+        {
+            return _roomsList;
+        }
+
+        // New method to fetch a specific booking by its ID
+        public Booking GetBookingById(int id)
+        {
+            return _bookings.FirstOrDefault(b => b.BookingId == id);
+        }
+
+        // New method to update a booking
+        public void UpdateBooking(Booking updatedBooking)
+        {
+            var existingBooking = _bookings.FirstOrDefault(b => b.BookingId == updatedBooking.BookingId);
+
+            if (existingBooking == null)
+                throw new InvalidOperationException("Booking doesn't exist.");
+
+            existingBooking.BookingDate = updatedBooking.BookingDate;
+            existingBooking.StartTime = updatedBooking.StartTime;
+            existingBooking.EndTime = updatedBooking.EndTime;
+            existingBooking.ParticipantCount = updatedBooking.ParticipantCount;
+            existingBooking.AssociatedRoom = updatedBooking.AssociatedRoom;
+        }
     }
 }
