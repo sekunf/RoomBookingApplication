@@ -13,14 +13,27 @@
         <Setter Property="FontSize" Value="Large"/>
      </Style>
 
+    <Style TargetType="Label" x:Key="QuestionStyle">
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="TextColor" Value="White"></Setter>
+        <Setter Property="FontSize" Value="Medium"/>
+        <Setter Property="Padding" Value="15"/>
+
+     </Style>
+
      <!--Buttons Style--> 
     <Style TargetType="Button" x:Key="ButtonLblStyle">
             <Setter Property="TextColor" Value="White"></Setter>
             <Setter Property="BackgroundColor" Value="DarkBlue"></Setter>
             <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+    </Style>
 
-
-
+     <Style TargetType="Button" x:Key="ViewSolutionButtonLblStyle">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="DarkCyan"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
     </Style>
 
 </ResourceDictionary>

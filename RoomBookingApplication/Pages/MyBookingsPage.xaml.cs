@@ -29,6 +29,11 @@ public partial class MyBookingsPage : ContentPage
             BindingContext = this;
         }
 
-        
+    void HelpPageButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        HelpPage helpPage = new HelpPage();
+        Navigation.PushAsync(helpPage);
+    }
+
 }
 

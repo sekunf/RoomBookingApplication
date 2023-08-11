@@ -32,14 +32,14 @@ namespace RoomBookingApplication.BusinessLogic
             {
                 if (UserInfo[username] != password)
                 {
-                    throw new ArgumentException("Invalid Username");
+                    throw new ArgumentException("Invalid Password");
                 }
 
             }
 
             else
             {
-                throw new ArgumentException("Invalid Password");
+                throw new ArgumentException("Invalid Username");
 
             }
         }

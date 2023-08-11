@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RoomBookingApplication.Pages.MyBookingsPage"
              Title="MyBookings">
+
     <VerticalStackLayout>
 
         <ScrollView>
@@ -22,6 +23,8 @@
             </HorizontalStackLayout>
 
         </ScrollView>
+  
+    <VerticalStackLayout Padding="20">
 
         <ListView
             x:Name="BookingsListView"
@@ -78,6 +81,7 @@
 
 
 
+
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="15"> 
             <Button
                 Text="New Booking"
@@ -95,5 +99,22 @@
         </HorizontalStackLayout>
 
 
+        <Button
+            Text="New Booking"
+            Style="{StaticResource ButtonLblStyle}"
+
+            />
+        <Button
+            Text="Edit Booking"
+            Style="{StaticResource ButtonLblStyle}"
+            />
+        <Button
+            x:Name="HelpPageButton"
+            Text="Go to help page"
+            Style="{StaticResource ButtonLblStyle}"
+            Clicked="HelpPageButton_Clicked"
+            />
+
+    </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -60,6 +60,7 @@
 	  <None Remove="BusinessLogic\" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Pages\HelpPages\" />
+	  <None Remove="Resources\Images\RoomBooking.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
@@ -75,5 +76,6 @@
 	  </BundleResource>
 	  <BundleResource Include="Resources\Images\user.png" />
 	  <BundleResource Include="Resources\Images\info.png" />
+	  <BundleResource Include="Resources\Images\rblogo.png" />
 	</ItemGroup>
 </Project>

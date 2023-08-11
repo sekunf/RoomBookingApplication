@@ -18,29 +18,35 @@
 
         <Label
             Text="How do I make a reservation?"
-            />
+            Style="{StaticResource QuestionStyle}"/>
 
         <Button
             x:Name="Question1"
             Text="View Solution"
             Clicked="Question1_Clicked"
-            />
+            Style="{StaticResource ViewSolutionButtonLblStyle}"/>
 
 
         <Label
-            Text="Can I modify or cancel my booking?"/>
+            Text="Can I modify or cancel my booking?"
+            Style="{StaticResource QuestionStyle}"/>
+
         <Button
             x:Name="Question2"
             Text="View Solution"
-            Clicked="Question2_Clicked"/>
+            Clicked="Question2_Clicked"
+            Style="{StaticResource ViewSolutionButtonLblStyle}"/>
 
 
          <Label
-            Text="What is your cancellation policy?"/>
+            Text="What is your cancellation policy?"
+            Style="{StaticResource QuestionStyle}"/>
+
         <Button
             x:Name="Question3"
             Text="View Solution"
-            Clicked="Question3_Clicked"/>
+            Clicked="Question3_Clicked"
+            Style="{StaticResource ViewSolutionButtonLblStyle}"/>
 
 
 
