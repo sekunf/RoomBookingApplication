@@ -66,18 +66,37 @@ namespace RoomBookingApplication.BusinessLogic
             }
             else if (booking.IsDurationTooLong())
             {
-                throw new Exception("Booking duration is too long.");
+                throw new Exception("Booking duration is too long\nCannot be longer than 3 Hours.");
             }
             else if (participantCount > room.SeatingCapacity)
             {
-                throw new Exception("Participant count exceeds room seating capacity.");
+                throw new Exception($"Participant count exceeds room seating capacity\nRoom only seats {room.SeatingCapacity} people.");
             }
             else if (booking.IsBookingDateTooFar())
             {
-                throw new Exception("The booking is more than 3days from today.");
+                throw new Exception("The booking is more than 3 days from today.");
+            }
+            else if (HasConflictingBooking(booking, Bookings))
+            {
+                throw new Exception("There is a conflicting booking for the same room and time.");
             }
 
             return true;
+        }
+
+        private bool HasConflictingBooking(Booking newBooking, List<Booking> existingBookings)
+        {
+            foreach (var existingBooking in existingBookings)
+            {
+                if (existingBooking.AssociatedRoom == newBooking.AssociatedRoom &&
+                    (newBooking.StartTime < existingBooking.EndTime) &&
+                    (newBooking.EndTime > existingBooking.StartTime))
+                {
+                    return true; // Conflicting booking found
+                }
+            }
+
+            return false; // No conflicting booking found
         }
 
         // run it in the here so it checks for the 3 days greater or not
@@ -143,6 +162,7 @@ namespace RoomBookingApplication.BusinessLogic
                 throw new ArgumentException("Booking doesn't exist");
             _roomsList.Remove(rooms);
         }
+        
 
 
     }
