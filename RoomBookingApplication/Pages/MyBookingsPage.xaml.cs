@@ -5,8 +5,8 @@ namespace RoomBookingApplication.Pages;
 
 public partial class MyBookingsPage : ContentPage
 {
-	
 
+    public static string CurrentUser { get; set; }
     BookingManager _BookingManager = new BookingManager();
     CsvManager CsvManager = new CsvManager();
 
@@ -88,6 +88,14 @@ public partial class MyBookingsPage : ContentPage
         Navigation.PushAsync(editBookingPage);
     }
 
-   
+    void UserProfileButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        UserProfilePage userProfilePage = new UserProfilePage(MyBookingsPage.CurrentUser);
+        Navigation.PushAsync(userProfilePage);
+    }
+
+
+
+
 }
 

@@ -14,22 +14,23 @@ public partial class LoginPage : ContentPage
 		string username = UsernameEntry.Text;
 		string password = PasswordEntry.Text;
 
-		try
-		{
-			User.Login(username, password);
-			DisplayAlert("Login succesful!", "Welcome to Room Booking", "Ok");
+        try
+        {
+            User.Login(username, password);
+            DisplayAlert("Login successful!", "Welcome to Room Booking", "Ok");
 
-			MyBookingsPage myBookingsPage = new MyBookingsPage();
-			await Navigation.PushAsync(myBookingsPage);
+            // Set the current user after a successful login
+            MyBookingsPage.CurrentUser = username;
 
-		}
+            MyBookingsPage myBookingsPage = new MyBookingsPage();
+            await Navigation.PushAsync(myBookingsPage);
+        }
+        catch (ArgumentException ex)
+        {
+            DisplayAlert("Error", ex.Message, "ok");
+        }
 
-		catch (ArgumentException ex)
-		{
-			DisplayAlert("Error", ex.Message, "ok");
-		}
-
-	}
+    }
 
 
 }

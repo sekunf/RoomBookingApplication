@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoomBookingApplication.Pages.UserProfilePage"
+             Title="UserProfilePage">
+    <StackLayout Padding="20">
+
+        <!-- Display Username -->
+        <Label Text="Username:" FontSize="Medium"/>
+        <Label x:Name="UsernameLabel" FontSize="Large"/>
+
+        <!-- Display & Edit Password -->
+        <Label Text="Password:" FontSize="Medium"/>
+        <Entry x:Name="PasswordEntry" IsPassword="True"/>
+        
+        <!-- Button to edit password -->
+        <Button Text="Update Password" Clicked="OnUpdatePasswordClicked"/>
+
+    </StackLayout>
+
+</ContentPage>

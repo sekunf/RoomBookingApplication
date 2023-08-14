@@ -74,25 +74,26 @@
 
 
         <Button
-            Text="New Booking"
-            Style="{StaticResource ButtonLblStyle}"
-            Clicked="NewBookingBtnClicked"
-
-            />
-        <Button
-            x:Name="EditBookingBtn"
-            Text="Edit Booking"
-            Style="{StaticResource ButtonLblStyle}"
-            Clicked="EditBookingBtnClicked"
-            />
-        <Button
-            x:Name="HelpPageButton"
-            Text="Go to help page"
-            Style="{StaticResource ButtonLblStyle}"
-            Clicked="HelpPageButton_Clicked"
-            />
-
-    </VerticalStackLayout>
+        Text="New Booking"
+        Style="{StaticResource ButtonLblStyle}"
+        Clicked="NewBookingBtnClicked" />
+    <Button
+        x:Name="EditBookingBtn"
+        Text="Edit Booking"
+        Style="{StaticResource ButtonLblStyle}"
+        Clicked="EditBookingBtnClicked" />
+    <Button
+        x:Name="HelpPageButton"
+        Text="Go to help page"
+        Style="{StaticResource ButtonLblStyle}"
+        Clicked="HelpPageButton_Clicked" />
+    <Button
+        x:Name="UserProfileButton"
+        Text="UserProfile"
+        Style="{StaticResource ButtonLblStyle}"
+        Clicked="UserProfileButton_Clicked" />
+        
+</VerticalStackLayout>
 
 
         
