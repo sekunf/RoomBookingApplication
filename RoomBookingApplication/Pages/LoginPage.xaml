@@ -35,9 +35,7 @@
         <Entry
             x:Name="PasswordEntry"
             Placeholder="Enter your password"
-            IsPassword="True"
-
-            />
+            IsPassword="True"/>
 
         <Button
             
@@ -45,7 +43,8 @@
             Text="Login"
             Clicked="LoginButton_Clicked"
             Style="{StaticResource ButtonLblStyle}"
-            WidthRequest="80"/>
+            WidthRequest="80"
+            Margin="20"/>
 
             </StackLayout>
 
