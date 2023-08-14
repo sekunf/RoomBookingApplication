@@ -14,12 +14,6 @@
             Style="{StaticResource HeadingStyle}"/>
 
         <Image
-            x:Name="AppLogo"
-            Source="rblogo.png"
-            WidthRequest="180"
-            />
-
-        <Image
             x:Name="LoginImage"
             Source="user.png"
             WidthRequest="220"
@@ -41,7 +35,8 @@
         <Entry
             x:Name="PasswordEntry"
             Placeholder="Enter your password"
-            IsPassword="True"/>
+
+            />
 
         <Button
             
@@ -49,8 +44,7 @@
             Text="Login"
             Clicked="LoginButton_Clicked"
             Style="{StaticResource ButtonLblStyle}"
-            WidthRequest="80"
-            Margin="20"/>
+            WidthRequest="80"/>
 
             </StackLayout>
 

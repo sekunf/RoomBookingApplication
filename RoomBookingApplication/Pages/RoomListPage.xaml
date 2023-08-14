@@ -3,72 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RoomBookingApplication.Pages.RoomListPage"
              Title="RoomList">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout>
+                
+                <HorizontalStackLayout Spacing="20">
+                    <Label x:Name="FilterByCampusLabel" VerticalOptions="Center" Text="Filter by Campus:" Margin="0,20,0,0"/>
+                    <Button x:Name="DAVButton" Text="DAV" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                    <Button x:Name="HMCButton" Text="HMC" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                    <Button x:Name="TRAButton" Text="TRA" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                </HorizontalStackLayout>
 
-         <ListView
-            x:Name="RoomsListView"
-            ItemsSource="{Binding RoomsList}"
-            SelectedItem="{Binding SelectedRoom, Mode=TwoWay}">
-        <ListView.ItemTemplate>
-        <DataTemplate>
-            <ViewCell>
-                <ViewCell.View>
-                    <Grid BackgroundColor="White">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <Label
-                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                            Text="{Binding RoomName}"
-                            FontSize="Body"
-                            FontAttributes="Bold"
-                            TextColor="DarkBlue"
-                        />
-                        
-                        <Label
-                            Grid.Row="1" Grid.Column="0"
-                            Text="{Binding RoomType}"
-                            FontSize="Body"
-                            FontAttributes="Bold"
-                            TextColor="DarkBlue"
-                        />
-                        
-                        
-                    </Grid>
-                </ViewCell.View>
-            </ViewCell>
-        </DataTemplate>
-    </ListView.ItemTemplate>
-</ListView>
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout x:Name="RoomTypeStackLayout" Orientation="Horizontal" Spacing="20">
+                        <Label x:Name="RoomTypeFilterLabel" VerticalOptions="Center" Text="Filter by Room Type:" Margin="0,20,0,0"/>
+                        <Button x:Name="GroupStudyButton" Text="GroupStudy" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                        <Button x:Name="SilentStudyButton" Text="SilentStudy" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                        <Button x:Name="IndividualStudyButton" Text="IndividualStudy" Margin="0,20,0,0" Clicked="FilterButton_Clicked"/>
+                    </StackLayout>
+                </ScrollView>
 
-         <Button Text="Booking Room" 
-                Margin="0,20,0,0"
+                <Button Text="Clear Filters" Margin="0,20,0,20" Clicked="ClearFilterButton_Clicked"/>
+
+                <Label HorizontalOptions="Center" Text="Select a Room" Margin="0,0,0,20" FontAttributes="Bold" FontSize="18"/>
+                <ListView
+                    x:Name="RoomsListView"
+                    ItemsSource="{Binding RoomsList}"
+                    SelectedItem="{Binding SelectedRoom, Mode=TwoWay}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid BackgroundColor="White">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label
+                                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                            Text="{Binding RoomName}"
+                                            FontSize="Body"
+                                            FontAttributes="Bold"
+                                            TextColor="DarkBlue"
+                                        />
+                                        
+                                        <Label
+                                            Grid.Row="1" Grid.Column="0"
+                                            Text="{Binding RoomType}"
+                                            FontSize="Body"
+                                            FontAttributes="Bold"
+                                            TextColor="DarkBlue"
+                                        />
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+        
+     
+        <Button Text="Book Room" 
+                Grid.Row="1"
+                Margin="0,20,0,30"
                 Clicked="BookRoomBtn_Clicked"
-                Style="{StaticResource ButtonLblStyle}"
-                />
-
-        <Button Text="Filter" 
-                Margin="0,20,0,0"
-                Clicked="FilterButton_Clicked"
-                Style="{StaticResource ButtonLblStyle}"/>
-
-        <Button Text="Clear Filter" 
-                Margin="0,20,0,0"
-                Clicked="ClearFilterButton_Clicked"
-                Style="{StaticResource ButtonLblStyle}"/>
-       
-    </VerticalStackLayout>
+                VerticalOptions="End"/>
+    </Grid>
 </ContentPage>
