@@ -1,11 +1,12 @@
 ﻿using System;
+using RoomBookingApplication.BusinessLogic;
 namespace RoomBookingApplication.BusinessLogic
 {
     public class Booking
     {
-        
-        
-            public int BookingId { get; set; }
+       
+
+        public int BookingId { get; set; }
             public DateTime BookingDate { get; set; }
             public TimeSpan StartTime { get; set; }
             public TimeSpan EndTime { get; set; }
@@ -51,6 +52,31 @@ namespace RoomBookingApplication.BusinessLogic
             return difference.TotalDays > 3;
         }
 
+        public static Booking Parse(string csvString)
+        {
+            var data = csvString.Split(',');
+            if (data.Length == 5)
+            {
+                DateTime bookingDate = DateTime.Parse(data[0]);
+                TimeSpan startTime = TimeSpan.Parse(data[1]);
+                TimeSpan endTime = TimeSpan.Parse(data[2]);
+                int participantCount = int.Parse(data[3]);
+                string roomName = data[4];
+
+                BookingManager bookingManager = new BookingManager();
+                Rooms associatedRoom = bookingManager.FindRoomByName(roomName);
+
+                return new Booking
+                {
+                    BookingDate = bookingDate,
+                    StartTime = startTime,
+                    EndTime = endTime,
+                    ParticipantCount = participantCount,
+                    AssociatedRoom = associatedRoom
+                };
+            }
+            return null;
+        }
 
 
 

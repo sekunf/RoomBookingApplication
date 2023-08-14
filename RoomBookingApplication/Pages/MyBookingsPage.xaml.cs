@@ -1,18 +1,14 @@
 ﻿//using static Android.Provider.ContactsContract.CommonDataKinds;
 using RoomBookingApplication.BusinessLogic;
+using RoomBookingApplication.DataAccess;
 namespace RoomBookingApplication.Pages;
 
 public partial class MyBookingsPage : ContentPage
 {
 	
 
-        BookingManager _BookingManager = new BookingManager();
-
-		
-
-   
-
-
+    BookingManager _BookingManager = new BookingManager();
+    CsvManager CsvManager = new CsvManager();
 
     public BookingManager BookingManager{ get { return _BookingManager; } }
 
@@ -34,21 +30,35 @@ public partial class MyBookingsPage : ContentPage
 
     public MyBookingsPage()
     {
-
         InitializeComponent();
-            
-        BookingManager.AddRoom(4, Campus.DAV, RoomType.GroupStudy);
-        BookingManager.AddRoom(4, Campus.DAV, RoomType.GroupStudy);
-        BookingManager.AddRoom(4, Campus.HMC, RoomType.GroupStudy);
 
-        DateTime dummyBookingDate = new DateTime(2023, 8, 12); // Dummy booking date
-        TimeSpan startTime = new TimeSpan(10, 0, 0); // Start time
-        TimeSpan endTime = new TimeSpan(13, 0, 0); // End time
-        int participantCount = 4; // Participant count
+        
+        if (CsvManager.LoadRooms() == null)
+        {
+            BookingManager.GenerateRandomRooms();
+            CsvManager.SaveRooms(BookingManager.RoomsList);
+        }
+        else
+        {
+            BookingManager.RoomsList = CsvManager.LoadRooms();
+        }
 
-        BookingManager.AddBooking("DAV 102", dummyBookingDate, startTime, endTime, participantCount);
+        
+        //List<Booking> loadedBookings = CsvManager.LoadBookings();
+        if (CsvManager.LoadBookings() != null)
+        {
+            BookingManager.Bookings = CsvManager.LoadBookings();
+        }
 
         BindingContext = this;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        BookingsListView.ItemsSource = null;
+        BookingsListView.ItemsSource = BookingManager.Bookings;
+
     }
 
     void HelpPageButton_Clicked(System.Object sender, System.EventArgs e)

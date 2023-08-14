@@ -4,6 +4,7 @@
              x:Class="RoomBookingApplication.Pages.MyBookingsPage"
 
              Title="MyBookings">
+    
     <VerticalStackLayout>
         
         <ListView

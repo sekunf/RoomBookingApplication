@@ -58,5 +58,23 @@ namespace RoomBookingApplication.BusinessLogic
             RoomNumber = _nextRoomNumber++;
             RoomName = $"{Campus} {RoomNumber}"; // Construct the room name
         }
+
+        public static Rooms Parse(string csvString)
+        {
+            var data = csvString.Split(',');
+            if (data.Length == 4)
+            {
+                int seatingCapacity = int.Parse(data[1]);
+                Campus campus = (Campus)Enum.Parse(typeof(Campus), data[2]);
+                RoomType roomType = (RoomType)Enum.Parse(typeof(RoomType), data[3]);
+
+                return new Rooms(seatingCapacity, campus, roomType)
+                {
+                    RoomName = data[0]
+                };
+            }
+            return null;
+        }
+
     }
 }

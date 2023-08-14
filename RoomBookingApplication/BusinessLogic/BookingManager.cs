@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-//using static Android.Provider.DocumentsContract;
-//using static Android.Provider.DocumentsContract;
 using static RoomBookingApplication.BusinessLogic.Rooms;
+using RoomBookingApplication.DataAccess;
 
 namespace RoomBookingApplication.BusinessLogic
 {
@@ -11,15 +10,17 @@ namespace RoomBookingApplication.BusinessLogic
     {
         private List<Rooms> _roomsList;
         private List<Booking> _bookings;
-
+        public List<Rooms> filteredRooms = new List<Rooms>();
         public List<Rooms> RoomsList
         {
             get { return _roomsList; }
+            set { _roomsList = value; }
         }
 
         public List<Booking> Bookings
         {
             get { return _bookings; }
+            set { _bookings = value; }
         }
 
         public BookingManager()
@@ -28,18 +29,20 @@ namespace RoomBookingApplication.BusinessLogic
             _bookings = new List<Booking>();
         }
 
-
+        CsvManager CsvManager = new CsvManager();
+        
         public void AddRoom(int seatingCapacity, Campus campus, RoomType roomType)
         {
             Rooms newRoom = new Rooms(seatingCapacity, campus, roomType);
             _roomsList.Add(newRoom);
+            CsvManager.SaveRooms(RoomsList);
         }
 
         public void AddBooking(string roomName, DateTime bookingDate, TimeSpan startTime, TimeSpan endTime, int participantCount)
         {
             Booking booking = new Booking();
 
-            // Set properties for the newly created booking
+           
             booking.BookingDate = bookingDate;
             booking.StartTime = startTime;
             booking.EndTime = endTime;
@@ -52,9 +55,10 @@ namespace RoomBookingApplication.BusinessLogic
             if (BookingIsValid(booking, participantCount, room))
             {
                 _bookings.Add(booking);
+                CsvManager.SaveBookings(Bookings);
             }
-           
 
+            
 
         }
 
@@ -164,6 +168,91 @@ namespace RoomBookingApplication.BusinessLogic
         }
         
 
+        //FILTERS
 
+        public List<Rooms> FilterRoomsByCampus(Campus campus)
+        {
+            List<Rooms> newFilteredRooms = new List<Rooms>();
+
+            if (filteredRooms.Count == 0)
+            {
+                foreach (var room in _roomsList)
+                {
+                    if (room.Campus == campus)
+                    {
+                        newFilteredRooms.Add(room);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var room in filteredRooms)
+                {
+                    if (room.Campus == campus)
+                    {
+                        newFilteredRooms.Add(room);
+                    }
+                }
+            }
+
+            filteredRooms = newFilteredRooms;
+            return filteredRooms;
+        }
+
+        public List<Rooms> FilterRoomsByRoomType(RoomType roomType)
+        {
+            List<Rooms> newFilteredRooms = new List<Rooms>();
+
+            if (filteredRooms.Count == 0)
+            {
+                foreach (var room in _roomsList)
+                {
+                    if (room.RoomType == roomType)
+                    {
+                        newFilteredRooms.Add(room);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var room in filteredRooms)
+                {
+                    if (room.RoomType == roomType)
+                    {
+                        newFilteredRooms.Add(room);
+                    }
+                }
+            }
+
+            filteredRooms = newFilteredRooms;
+            return filteredRooms;
+        }
+
+
+
+        public void ClearFilters()
+        {
+            filteredRooms = new List<Rooms>();
+            
+        }
+
+
+        //-DUMMY DATA
+
+        public void GenerateRandomRooms()
+        {
+
+            Random random = new Random();
+            for (int i = 0; i < 35; i++)
+            {
+                int randomSeatingCapacity = random.Next(1, 11); 
+                Campus randomCampus = (Campus)random.Next(0,3);
+                RoomType randomRoomType = (RoomType)random.Next(0,3);
+
+                AddRoom(randomSeatingCapacity, randomCampus, randomRoomType);
+            }
+
+        }
     }
 }
+
