@@ -56,6 +56,19 @@
 
          <Button Text="Booking Room" 
                 Margin="0,20,0,0"
-                Clicked="BookRoomBtn_Clicked"/>
+                Clicked="BookRoomBtn_Clicked"
+                Style="{StaticResource ButtonLblStyle}"
+                />
+
+        <Button Text="Filter" 
+                Margin="0,20,0,0"
+                Clicked="FilterButton_Clicked"
+                Style="{StaticResource ButtonLblStyle}"/>
+
+        <Button Text="Clear Filter" 
+                Margin="0,20,0,0"
+                Clicked="ClearFilterButton_Clicked"
+                Style="{StaticResource ButtonLblStyle}"/>
+       
     </VerticalStackLayout>
 </ContentPage>
