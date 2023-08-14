@@ -80,6 +80,7 @@
 
             />
         <Button
+            x:Name="EditBookingBtn"
             Text="Edit Booking"
             Style="{StaticResource ButtonLblStyle}"
             Clicked="EditBookingBtnClicked"

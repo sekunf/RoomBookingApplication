@@ -49,6 +49,10 @@ public partial class MyBookingsPage : ContentPage
         {
             BookingManager.Bookings = CsvManager.LoadBookings();
         }
+        else
+        {
+            EditBookingBtn.IsEnabled = false;
+        }
 
         BindingContext = this;
     }
@@ -59,6 +63,10 @@ public partial class MyBookingsPage : ContentPage
         BookingsListView.ItemsSource = null;
         BookingsListView.ItemsSource = BookingManager.Bookings;
 
+        if (BookingManager.Bookings.Count > 0)
+        {
+            EditBookingBtn.IsEnabled = true;
+        }
     }
 
     void HelpPageButton_Clicked(System.Object sender, System.EventArgs e)
