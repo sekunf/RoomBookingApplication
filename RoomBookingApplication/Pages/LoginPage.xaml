@@ -14,6 +14,12 @@
             Style="{StaticResource HeadingStyle}"/>
 
         <Image
+            x:Name="AppLogo"
+            Source="rblogo.png"
+            WidthRequest="180"
+            />
+
+        <Image
             x:Name="LoginImage"
             Source="user.png"
             WidthRequest="220"
